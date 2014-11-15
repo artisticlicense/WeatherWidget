@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Weather Widget</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<script type="text/x-handlebars" data-template-name="index">
+			{{#each item in model}}
+				<div id="ww-container">
+					<div id="ww-location">{{item.location}}</div>
+					<div id="ww-current-condition">
+						<ul>
+							<li>
+								<div id="ww-current-temp">{{item.condition.temp}}°</div>
+							</li>
+							<li>
+								<img {{bindAttr src="item.imageurl"}} alt="Weather Icon">
+								<div id="ww-current-text">{{item.condition.text}}</div>
+							</li>
+						</ul>
+					<div>
+					<div id="ww-forecast">
+						<ul>
+							<li class="ww-forecast-br">
+								<div class="ww-forecast-day">{{item.forecast1day}}</div>
+								<div class="ww-forecast-temp">{{item.forecast1high}}° / {{item.forecast1low}}°</div>
+							</li>
+							<li class="ww-forecast-br">
+								<div class="ww-forecast-day">{{item.forecast2day}}</div>
+								<div class="ww-forecast-temp">{{item.forecast2high}}° / {{item.forecast2low}}°</div>
+							</li>
+							<li class="ww-forecast-br">
+								<div class="ww-forecast-day">{{item.forecast3day}}</div>
+								<div class="ww-forecast-temp">{{item.forecast3high}}° / {{item.forecast3low}}°</div>
+							</li>
+							<li class="ww-forecast-br">
+								<div class="ww-forecast-day">{{item.forecast4day}}</div>
+								<div class="ww-forecast-temp">{{item.forecast4high}}° / {{item.forecast4low}}°</div>
+							</li>
+							<li>
+								<div class="ww-forecast-day">{{item.forecast5day}}</div>
+								<div class="ww-forecast-temp">{{item.forecast5high}}° / {{item.forecast5low}}°</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			{{/each}}
+		</script>
+		<script src="js/libs/jquery-1.9.1.js"></script>
+		<script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
+		<script src="js/libs/ember-1.0.0-rc.1.js"></script>
+		<script src="js/weathermvc.js"></script> 
+	</body>
+</html>
+
+<!--<img {{bind-attr src=item.imageurl}} alt="weather icon" >-->
+<!-- <script type="text/x-handlebars" data-template-name="index"> after body tag -->
